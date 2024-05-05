@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+    <h1>Portal to Yasmia:</h1>
+    <p>
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="icon" href="Logo.ico" type="image/x-icon">
+            <title>Portal Games</title>
+            <link rel="stylesheet" href="styles.css">
+        </head>
+        <style>
+            canvas {
+                border: 5px solid #000;
+            }
+
+            h5 {
+                font-family: Freestyle Script;
+            }
+        </style>
+    <h2>Portal Traits</h2>
+</p><h3>Baby Portal</h3>
+<p>Colour: bright pink; </p>
+
+<p>Danger level: 0;</p>
+<p>What it does: takes you out of Invisible, Fire, and Ocean portals </p><h3>Invisible Portal</h3>
+<p>Colour: clear;</p>
+
+
+
+
+
+<p>
+Danger level: 2;</p>
+<p>What it does: makes your car invisible </p><h3>Dead Portal</h3>
+<p>Colour: grey;</p>
+
+
+
+
+
+<p>
+Danger level: 0;</p>
+<p>What it does: takes you out of Invisible, Fire, and Ocean portals </p><h3>Fire Portal</h3>
+<p>Colour: orange;</p>
+
+
+
+
+
+
+<p>Danger level: 5;</p>
+<p>What it does: brings your car to the Fire World </p><h3>Water Portal</h3>
+<p>Colour: bright blue;</p>
+
+
+
+
+
+<p>
+Danger level: 3;</p>
+<p>What it does: brings you to the Ocean World </p><p>
+<h2>Power-Ups</h2>
+</p><h3>Protection</h3>
+<p></p>
+<h4>World Safety</h4>
+<p>
+Colour: black;</p>
+<p>Protects from: traveling to other worlds</p>
+<h4>Vision Safety</h4>
+<p>
+Colour: green;</p>
+<p>Protects from: loss of vision</p>
+<h3>Speed</h3>
+<h4>Slow Down</h4>
+<p>
+Colour: dark red</p>
+<h4>Normal Speed</h4>
+<p>
+Colour: bright blue</p>
+<h4>Speed Up</h4>
+<p>
+Colour: bright pink</p>
+
+<h2>Worlds</h2>
+</p><h3>Fire World</h3>
+<p>This is a place full of fire. Depending on which level you're on, this can be the most dangerous one!</p>
+<h3>Ocean World</h3>
+<p>This is a place full of water, and friendly fish. Depending on which level you're on, the fish give you an extra live if you come directly from the Fire World!</p>
+<p>
+<h2>The Mission</h2>
+</p><button onclick="mi()">Play the mission statement</button>
+<script>
+    var mission = new Audio("mission.mp3");
+    function mi() {
+        mission.play();
+    }
+    if (localStorage.getItem('fixedVariable') === null) {
+        localStorage.setItem('fixedVariable', 'false');
+    }
+    if (localStorage.getItem("code") === null) {
+        localStorage.setItem("code", "0");
+    }
+    const code = ["!?.LevelUpTime!?.", "Upgr@d3", "|_|p & @W@y", "Go, G0, gO!", "FuN Game!", "G3t My $!$ter", "|)3f3At $@Ctintr@", "P0rt@|$", "YA$Mi4", "|-|3lp |-|3r", "A|| f0r $ibling$", "G0O|)-by3 to $@ctintr@", "t0g3t|-|3rne$$", "don't 3at |-|3r!", "My $ist3r!", "|<!|l $@ctintr@", "!@?. 9$", ".1 !2 ?3 ?!4", "Off with $actintra!", "-$@(tintr@ = Y@$m!4 + Y|_|$3E",];
+    var codeNum = localStorage.getItem("code");
+    codeNum = parseInt(codeNum, 10);
+</script>
+<p>
+    <button onclick="Play()" class="m">Play Game Music</button>
+    <script>
+        var music = new Audio("Game Music.mp3")
+          , volume = null;
+        function Play() {
+            music.play();
+            volume = true;
+        }
+        var powered = {
+            x: null,
+            y: null,
+            type: null
+        }, esc, move = 0, flip;
+    </script>
+</p>
+<canvas id="gameCanvas" width="800" height="400"></canvas>
+<script src="portalGame.js"></script>
+Sad face means you lost, happy face means you won.
+<button id="myButton" class="e">Easy</button>
+<script>
+    const myButton = document.getElementById('myButton');
+
+    // Add a click event listener to the button
+    myButton.addEventListener('click', function() {
+        p = 0;
+        Easy();
+        changeBackground("midnight-sky");
+        // You can add more logic here based on the button click
+        // For example, change styles, update content, etc.
+    });
+</script>
+<button id="myButton1" class="M">Medium</button>
+<script>
+    // your-script.js
+
+    // Get a reference to the button by its ID
+    const myButton1 = document.getElementById('myButton1');
+
+    // Add a click event listener to the button
+    myButton1.addEventListener('click', function() {
+        p = 1;
+        Medium();
+        changeBackground("pre-dawn-sky");
+        // You can add more logic here based on the button click
+        // For example, change styles, update content, etc.
+    });
+</script>
+<button id="myButton2" class="h">Hard</button>
+<script>
+    // your-script.js
+
+    // Get a reference to the button by its ID
+    const myButton2 = document.getElementById('myButton2');
+
+    // Add a click event listener to the button
+    myButton2.addEventListener('click', function() {
+        p = 2;
+        Hard();
+        changeBackground("sunrise-sky");
+        // You can add more logic here based on the button click
+        // For example, change styles, update content, etc.
+    });
+</script>
+<button id="myButton3" class="i">Insane</button>
+<script>
+    const myButton3 = document.getElementById("myButton3");
+    myButton3.addEventListener("click", function() {
+        p = 3;
+        Insane();
+        changeBackground("dawn-sky");
+    });
+</script>
+<button id="score">Show Score</button>
+<script>
+    const score = document.getElementById("score");
+    var points;
+    score.addEventListener("click", function() {
+        switch (p) {
+        case 0:
+            points = l;
+            alert(points);
+            break;
+        case 1:
+        case 2:
+            points = (l + l2) / 2;
+            alert(points);
+            break;
+        case 3:
+            points = (l + l2 + li) / 3;
+            alert(points);
+            break;
+        default:
+            alert("Score is unavailable. Please play the game to receive your score when pressing the 'Show Score' button.");
+            break;
+        }
+    });
+</script>
+<button id="up">Upgrade</button>
+<script>
+    var ask, ask2, tru, lev = new Audio("new.mp3"), tru2;
+    const up = document.getElementById("up");
+    tru2 = localStorage.getItem('fixedVariable');
+    if (tru2 !== 'false') {
+        tru = true;
+    }
+    up.addEventListener("click", function() {
+        ask = window.prompt("What is the code?");
+        if (ask == code[codeNum]) {
+            localStorage.setItem('fixedVariable', 'true');
+            tru2 = localStorage.getItem('fixedVariable');
+            if (tru2 !== 'false') {
+                tru = true;
+            }
+            SL = 1000000;
+            ask2 = window.prompt("Is this your first time upgrading?");
+            if (ask2 === "yes" || ask2 === "Yes") {
+                lev.play();
+            }
+        } else {
+            alert("The code is incorrect.");
+        }
+    });
+</script>
+<button id="win" class = "super">Win the Game</button>
+<script>
+    const winGame = document.getElementById("win");
+    winGame.addEventListener("click", function() {
+        if (tru && (l <= 100000 || l2 <= 100000 || li <= 100000)) {
+            powered = {
+                x: 300,
+                y: 150,
+                type: "win"
+            };
+        } else {
+            alert("You are not ready for this powerup. This is only recieved in a dire situation, and after upgrading.");
+        }
+    });
+</script>
+<button id="life" class = "super">Life Restore</button>
+<script>
+    const life = document.getElementById("life");
+    life.addEventListener("click", function() {
+        if (tru && (l <= 100000 || l2 <= 100000 || li <= 100000)) {
+            powered = {
+                x: 300,
+                y: 150,
+                type: "life"
+            };
+        } else {
+            alert("You are not ready for this powerup. This is only recieved in a dire situation, and after upgrading.");
+        }
+    });
+</script>
+<button id="destroy" class = "super">Destroy a Portal</button>
+<script>
+    const destroy = document.getElementById("destroy");
+    destroy.addEventListener("click", function() {
+        if (tru && (l <= 100000 || l2 <= 100000 || li <= 100000)) {
+            powered = {
+                x: 300,
+                y: 150,
+                type: "destroy"
+            };
+        } else {
+            alert("You are not ready for this powerup. This is only recieved in a dire situation, and after upgrading.");
+        }
+    });
+</script>
+<button id="full">Full Screen</button>
+<script>
+    const full = document.getElementById("full");
+    esc = false;
+    full.addEventListener("click", function() {
+        canvas.width = 1300;
+        canvas.height = 600;
+        s.x = canvas.width / 2;
+        s.y = canvas.height / 2;
+        s.xSpeed *= (13 / 8);
+        s.ySpeed *= 1.5;
+        car2.x = 1200;
+        car.x = 50
+        esc = true;
+    });
+</script>
+<button id="f">New Game</button>
+<script>
+    const forget = document.getElementById("f");
+    forget.addEventListener("click", function() {
+        var asking = window.prompt("Are you sure you want to do this? All game information will be lost. You cannot undo this.");
+        if (asking === "Yes" || asking === "yes") {
+            localStorage.removeItem("fixedVariable");
+            tru = false;
+            powered = {
+                x: null,
+                y: null,
+                type: null
+            };
+            alert("It is done.");
+        }
+    });
+</script>
+<p>W, A, S, and D control the red car.</p>
+<p>I, J, K, and L control the blue car, but the blue car is only gained by pressing the upgrade button.</p> <p>Escape brings you out of the full screen.</p>
+<p>You have to select your level before you can start playing.</p>
+<p>
+    If Sactintra gets you, (after upgrading) you have to start over, and the code for upgrading changes.
+</p>
+<h1>The Challenge of Portals</h1><p></p>
+<canvas id="sequel" width="800" height="400"></canvas>
+<script src="https://1drv.ms/u/c/f2435216fb879338/EbhBIrSB4BNEouTf-CPPjtgBhLnFs-sKoWW1klnEpjtCgQ?e=5tdhyZ"></script>
+<button id="peiw">Shooting Portals</button>
+<script>
+    const peiw = document.getElementById("peiw");
+    peiw.addEventListener("click", function() {
+        
+    });
+</script>
+</html>

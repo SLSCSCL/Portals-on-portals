@@ -1,0 +1,75 @@
+h1 {
+    font-weight: bold;
+    text-decoration: italic;
+    color: #00bbff;
+}
+
+body {
+    margin: 0;
+    overflow: scroll;
+    background-color: #ff6c6c;
+}
+
+canvas {
+    display: block;
+    margin: 0 auto;
+    background-color: #ab00ff;
+}
+
+button.m {
+    background: deepskyblue;
+}
+
+button.e {
+    background: green;
+}
+
+button.M {
+    background: #ffff00;
+}
+
+button.h {
+    background: orangered;
+}
+
+button.i {
+    background: red;
+}
+
+button.super {
+    background-color: #ffbb00;
+}
+
+button {
+    background-color: #ff6cff;
+}
+
+h2 {
+    color: #003049;
+}
+
+h3 {
+    color: #B4FAE8;
+}
+
+h4 {
+    color: #303F9F;
+}
+
+.midnight-sky {
+    background-color: #000033;
+}
+
+.pre-dawn-sky {
+    background-color: #0C1446;
+}
+
+.dawn-sky {
+    background-color: #87CEEB;
+    /* Light Sky Blue */
+}
+
+.sunrise-sky {
+    background: linear-gradient(to bottom, #4682B4, #FF6347);
+    /* Steel Blue to Tomato */
+}
